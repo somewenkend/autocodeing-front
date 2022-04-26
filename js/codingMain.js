@@ -120,7 +120,7 @@ $(document).ready(function() {
 	// 给主编辑区绑定接收被拖拽组件事件
 	$("#mainArea").on("drop", function() {
 		// 取消主编辑区高亮
-		$(this).css("background-color", "#fdfff1");
+		$(this).css("background-color", "rgb(255 249 204)");
 		
 		// 获取拖拽元素绑定的组件数据
 		var data=JSON.parse(event.dataTransfer.getData("data"));
@@ -142,11 +142,11 @@ $(document).ready(function() {
 	});
 	// 拖拽元素进入目标元素高亮目标元素
 	$("#mainArea").on("dragenter", function() {
-		$(this).css("background-color", "#f2f7d7");
+		$(this).css("background-color", "rgb(255 242 148)");
 	});
 	// 拖拽元素离开目标元素取消高亮
 	$("#mainArea").on("dragleave", function() {
-		$(this).css("background-color", "#fdfff1");
+		$(this).css("background-color", "rgb(255 249 204)");
 	});
 });
 
@@ -168,9 +168,9 @@ function insertComponent(top, left, bottom, right, data) {
 		var activePos = getRectPos($activeComponent);
 		
 		var $insertBox = $activeComponent; // 待插入容器
-		if ($activeComponent.hasClass("isFrame")) {
-			$insertBox = $activeComponent.find(".body");
-		}
+		// if ($activeComponent.hasClass("isFrame")) {
+		// 	$insertBox = $activeComponent.find(".body");
+		// }
 		
 		// 判断拖拽元素与激活组件的相对位置
 		if (((0 < (right - activePos.left) && (activePos.right - left) > 0)) || ((0 < (bottom - activePos.top) && (activePos.bottom - top) > 0))) { // 相交或相容
@@ -275,7 +275,7 @@ function finalInsert($el, $box, insertIndexArr) {
  */
 function insertFinishedAction($activeComponent) {
 	// 元素插入完成之后，将插入容器高度设为auto
-	$activeComponent.css("height", "auto");
+	// $activeComponent.css("height", "auto");
 	// 初始化icheck
 	// $(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green"});
 }
@@ -313,11 +313,11 @@ function editComponent(componentName) {
 	$("#extraAttr").html("");
 	// 将组件当前的class属性值取出（不含isFrame autocoding-el strut-active）
 	var $effectEl = $(waitEdit); // 当前作用的元素
-	if ($(waitEdit).hasClass("img-box")) {
-		$effectEl = $(waitEdit).find("img");
-	}
+	// if ($(waitEdit).hasClass("img-box")) {
+	// 	$effectEl = $(waitEdit).find("img");
+	// }
 	var classes = $effectEl.attr("class");
-	$("#componentClass").val(classes.replace(/isFrame|autocoding-el|strut-active/g, "").trim());
+	$("#componentClass").val(classes.replace(/autocoding-el|strut-active/g, "").trim());
 	// 将组件当前的id属性值取出
 	var id = $effectEl.attr("id");
 	$("#componentId").val(id);
@@ -389,10 +389,10 @@ function ensureAttr() {
 	}
 	// 确认class
 	var curClasses = $("#componentClass").val();
-	// 若有isFrame autocoding-el strut-active，则加上
-	if ($effectEl.hasClass("isFrame")) {
-		curClasses += " isFrame";
-	}
+	// // 若有isFrame autocoding-el strut-active，则加上
+	// if ($effectEl.hasClass("isFrame")) {
+	// 	curClasses += " isFrame";
+	// }
 	if ($effectEl.hasClass("autocoding-el")) {
 		curClasses += " autocoding-el";
 	}

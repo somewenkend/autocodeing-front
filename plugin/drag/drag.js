@@ -36,7 +36,7 @@
      */
     window.cancelActive = function() {
 		// 移除激活组件中的删除按钮
-		$("." + CONST_VARIABLE.STRUT_ACTIVE).find(".del-el").remove();
+		$(".del-el").remove();
 		// 取消激活组件的激活状态
         $("." + CONST_VARIABLE.STRUT_ACTIVE).removeClass(CONST_VARIABLE.STRUT_ACTIVE);
     }
@@ -44,12 +44,14 @@
     // 声明构造函数
     function Drag(option, $box, insertIndexArr) {
 		var defaultOption = {
-			isFrame: false, // 是否是框架组件
+			// isFrame: false, // 是否是框架组件
+			editSelector: "", // 右键编辑的元素选择器，空字符串即为编辑当前组件
 			type: 0, // 结构组件或者UI组件0：UI组件，1：结构组件，默认UI组件
 			canChangeSize: 0, // 是否可拖拽大小
 			componentIcon: "fa fa-question",
 			componentName: "未知",
 			height: 100,
+			minWidth: "0",
 			dragDirect: [],
 			html: ""
 		};
@@ -58,6 +60,7 @@
 		
         var $el = $(option.html);
 		$el.height(option.height);
+		$el.css("min-width", option.minWidth + "px");
 		
 		finalInsert($el, $box, insertIndexArr);
         // $('#' + CONST_VARIABLE.MAIN_AREA).append($el);
@@ -156,14 +159,15 @@
 
 			// 绑定单击添加删除按钮且激活（结构组件激活加删除按钮，UI组件只加删除按钮）
 			this.el.addEventListener('click', componentActive(type), false);
-            if (type == 1) {
-                if (this.option.isFrame) { // 是结构组件且是框架元素则可编辑span、small
-                	$(this.el).find("span").attr("contentEditable", true);
-                	$(this.el).find("small").attr("contentEditable", true);
-                }
-            } else { // UI组件全部可编辑
-            	$(this.el).attr("contentEditable", true);
-            }
+            // if (type == 1) {
+            //     if (this.option.isFrame) { // 是结构组件且是框架元素则可编辑span、small
+            //     	$(this.el).find("span").attr("contentEditable", true);
+            //     	$(this.el).find("small").attr("contentEditable", true);
+            //     }
+            // } else { // UI组件全部可编辑
+            // 	$(this.el).attr("contentEditable", true);
+            // }
+			$(this.el).attr("contentEditable", true);
             $(this.el).attr("title", this.option.componentName);
             function componentActive(type) {
 				return function() {
@@ -204,7 +208,11 @@
 					document.addEventListener('mousemove', move, false);
 					document.addEventListener('mouseup', end, false);
 				} else if (event.which == 3) { // 鼠标右键点击
-					window.waitEdit = self.el;
+					if (self.option.editSelector != "") {
+						window.waitEdit = $(self.el).find(self.option.editEl);
+					} else {
+						window.waitEdit = self.el;
+					}
 					// 根据组件类型定义编辑模态框中的内容
 					editComponent(self.option.componentName);
 				}

@@ -4,38 +4,75 @@
 		"name": "结构组件",
 		"components": [
 			{
-				"name": "页面框架",
+				"name": "顶部操作区域",
 				"icon": "fa fa-hand-o-right fa-fw",
 				"data": [
 					{
-						"isFrame": true,
+						"editSelector": "",
 						"type": 1,
 						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-frame",
-						"componentName": "常规框架",
+						"componentIcon": "fa fa-search",
+						"componentName": "搜索区域",
 						"height": 170,
 						"dragDirect": ["t", "b"],
-						"html": "<div class=\"whiteBox boxShadow2 isFrame\" tabindex=\"0\"><div class=\"border border-bottom border-dark p15 bgDark\"><button type=\"button\" class=\"btn btn-default fr\"><i class=\"fa fa-arrow-left mr5\"></i>返回</button><span class=\"f18 c111\">头部标题</span><small class=\"mt5 db\">副标题</small></div><div class=\"p15 body\"></div></div>"
+						"html": "<div class=\"btn-tool\"></div>"
 					},
 					{
-						"isFrame": true,
-						"type": 1,
+						"editSelector": "",
+						"type": 2,
 						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-Frame",
-						"componentName": "表单框架",
-						"height": 170,
+						"componentIcon": "fa fa-search-plus",
+						"componentName": "高级搜索",
+						"height": "auto",
 						"dragDirect": ["t", "b"],
-						"html": "<div class=\"whiteBox boxShadow2 isFrame\" tabindex=\"0\"><div class=\"border border-bottom border-dark p15\"><button type=\"button\" class=\"btn btn-default fr\"><i class=\"fa fa-arrow-left mr5\"></i>返回</button><span class=\"f18 c111\">头部标题</span><small class=\"mt5 db\">副标题</small></div><form id=\"searchForm\"><div class=\"body border border-bottom border-dark bgDark p15\"></div><div class=\"p15\"><button type=\"button\" class=\"btn btn-success\"><i class=\"fa fa-search mr5\"></i>查询</button></div></form></div>"
+						"html": "<button type=\"button\" class=\"seracall ivu-btn ivu-btn-white\" id=\"highsearch\"><span><i class=\"iconfont iconqiehuan\"></i>高级搜索</span></button>"
 					},
 					{
-						"isFrame": true,
+						"editSelector": "",
+						"type": 2,
+						"canChangeSize": 1,
+						"componentIcon": "fa fa-search-minus",
+						"componentName": "模糊搜索",
+						"height": "auto",
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"search ml10\"><div class=\"bar6\"><input type=\"text\" id=\"paramStr\" placeholder=\"产品包编号  产品包名称\"><button id=\"search\" class=\"ivu-btn ivu-btn-primary\" type=\"button\"> <i class=\"fa fa-search\"></i></button></div></div>"
+					},
+					{
+						"editSelector": "",
 						"type": 1,
 						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-frame1",
-						"componentName": "内容框架",
-						"height": 170,
+						"componentIcon": "fa fa-align-right",
+						"componentName": "操作按钮区",
+						"height": 54,
+						"minWidth": 100,
 						"dragDirect": ["t", "b"],
-						"html": "<div class=\"whiteBox boxShadow2 isFrame mt20\" tabindex=\"0\"><div class=\"border border-bottom border-dark p15 bgDark\"><h1 class=\"f18 c111\">标题</h1></div><div class=\"body p15\"></div></div>"
+						"html": "<div class=\"toolright\"></div>"
+					}
+				]
+			},
+			{
+				"name": "高级搜索表单",
+				"icon": "fa fa-hand-o-right fa-fw",
+				"data": [
+					{
+						"editSelector": "",
+						"type": 1,
+						"canChangeSize": 1,
+						"componentIcon": "fa fa fa-file-text-o",
+						"componentName": "表单",
+						"height": 100,
+						"dragDirect": ["t", "b"],
+						"html": "<form class=\"form-all serch-form\" id=\"searchForm\"></form>"
+					},
+					{
+						"editSelector": "input",
+						"type": 1,
+						"canChangeSize": 1,
+						"componentIcon": "fa fa fa-file-text-o",
+						"componentName": "文本input",
+						"height": "auto",
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-md-4 form-cont\"><div class=\"col-md-5 form-left\">账单年月</div><div class=\"col-md-7\"><input name=\"billDate\" type=\"text\" class=\"ivu-input\" placeholder=\"请输入内容\"><div class=\"err-msg\"></div></div></div>"
 					}
 				]
 			},
