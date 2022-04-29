@@ -28,7 +28,34 @@
 
 	// 移除元素
 	window.removeEl = function(el) {
-		$(el).closest(".autocoding-el").remove();
+		// 通过style设置元素的尺寸，以保证前进后退时，能得到最新的元素尺寸
+		var curEl = $(el).closest("." + CONST_VARIABLE.AUTOCODING_EL);
+		curEl.css({"height": curEl.height(), "width": curEl.width()});
+		curEl.find("." + CONST_VARIABLE.AUTOCODING_EL).each(function() {
+			$(this).css({"height": curEl.height(), "width": curEl.width()});
+		});
+		// 设置尺寸后移除元素
+		curEl.remove();
+		// 移除后创建操作对象并将移除操作对象添加进操作栈[添加元素操作、移除元素操作]
+		// 添加元素操作
+		var operateAddObj = {};
+		var insertIndexArr = [];
+		operateAddObj.action = "add"; // 操作类型
+		operateAddObj.parentId = curEl.closest("." + CONST_VARIABLE.AUTOCODING_EL).data("id");
+		operateAddObj.self = curEl.clone();
+		operateAddObj.selfId = curEl.data("id");
+		if (curEl.next()[0]) { // 若有弟元素, 再次插入应插入到弟元素之前
+			insertIndexArr = [curEl.next().index() - 1, 1];
+		}
+		operateAddObj.insertIndexArr = insertIndexArr;
+		actionStack.pushAction(operateAddObj);
+
+		// 移除元素操作
+		var operateRemoveObj = {
+			action: "remove",
+			selfId: curEl.data("id")
+		};
+		actionStack.pushAction(operateRemoveObj);
 	}
     
     /**
@@ -43,26 +70,55 @@
     
     // 声明构造函数
     function Drag(option, $box, insertIndexArr) {
-		var defaultOption = {
-			// isFrame: false, // 是否是框架组件
-			editSelector: "", // 右键编辑的元素选择器，空字符串即为编辑当前组件
-			type: 0, // 结构组件或者UI组件0：UI组件，1：结构组件，默认UI组件
-			canChangeSize: 0, // 是否可拖拽大小
-			componentIcon: "fa fa-question",
-			componentName: "未知",
-			height: 100,
-			minWidth: "0",
-			dragDirect: [],
-			html: ""
-		};
-		var option = $.extend(true, defaultOption, option);
-		
-		
-        var $el = $(option.html);
-		$el.height(option.height);
-		$el.css("min-width", option.minWidth + "px");
-		
-		finalInsert($el, $box, insertIndexArr);
+		var $el;
+    	// 若option是jquery对象，则是前进后退操作
+		if (option instanceof jQuery) {
+			$el = option;
+		} else {
+			var defaultOption = {
+				// isFrame: false, // 是否是框架组件
+				editSelector: "", // 右键编辑的元素选择器，空字符串即为编辑当前组件
+				type: 0, // 结构组件或者UI组件0：UI组件，1：结构组件，默认UI组件
+				canChangeSize: 0, // 是否可拖拽大小
+				componentIcon: "fa fa-question",
+				componentName: "未知",
+				height: 100,
+				minWidth: "0",
+				dragDirect: [],
+				html: ""
+			};
+			var option = $.extend(true, defaultOption, option);
+
+			$el = $(option.html);
+			$el.height(option.height);
+			$el.css("min-width", option.minWidth + "px");
+
+			var elId = guid();
+			$el.attr("data-id", elId); // 用来确定元素的唯一性
+
+			$el.attr("data-type", option.type); // 保存type
+			$el.attr("data-changesize", option.canChangeSize); // 保存canChangeSize
+
+			// 保存添加动作[移除元素操作、添加元素操作]
+			// 移除元素操作
+			actionStack.pushAction({
+				action: "remove",
+				selfId: elId
+			});
+			// 添加元素操作
+			actionStack.pushAction({
+				action: "add",
+				parentId: $box.data("id"),
+				self: $el.clone(),
+				selfId: elId,
+				insertIndexArr: insertIndexArr
+			});
+		}
+
+		// 为了迁就大容器中的子元素初始化而做的判断
+		if ($box && insertIndexArr) {
+			finalInsert($el, $box, insertIndexArr);
+		}
         // $('#' + CONST_VARIABLE.MAIN_AREA).append($el);
 		
         this.el = $el[0];
@@ -90,12 +146,14 @@
     Drag.prototype = {
         constructor: Drag,
         init: function(type, changeSize) {
-            // 构建必要的html结构
-            this.buildHtml(changeSize);
+        	if (type) { // 若type存在则为新拖拽生成元素
+				// 构建必要的html结构
+				this.buildHtml(changeSize);
+			}
             // 绑定操作（激活、右键等）相关事件
-            this.setOperate(type);
+            this.setOperate(type ? type : $(this.el).data("type"));
             // 绑定拖拽相关事件
-            this.setDrag(changeSize);
+            this.setDrag(changeSize ? changeSize : $(this.el).data("changesize"));
         },
         buildHtml: function(changeSize) {
             $(this.el).addClass(CONST_VARIABLE.AUTOCODING_EL);
@@ -449,3 +507,12 @@
     // 暴露Drag类
     window.Drag = Drag;
 })();
+
+// 生成uuid
+function guid() {
+	return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+		var r = Math.random() * 16 | 0,
+			v = c == 'x' ? r : (r & 0x3 | 0x8);
+		return v.toString(16);
+	});
+}

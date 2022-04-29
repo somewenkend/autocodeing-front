@@ -72,7 +72,7 @@
 						"componentName": "文本input",
 						"height": "auto",
 						"dragDirect": ["t", "b"],
-						"html": "<div class=\"col-md-4 form-cont\"><div class=\"col-md-5 form-left\">账单年月</div><div class=\"col-md-7\"><input name=\"billDate\" type=\"text\" class=\"ivu-input\" placeholder=\"请输入内容\"><div class=\"err-msg\"></div></div></div>"
+						"html": "<div class=\"col-md-4 form-cont\"><div class=\"col-md-5 form-left\">姓名</div><div class=\"col-md-7\"><input name=\"billDate\" type=\"text\" class=\"ivu-input\" placeholder=\"请输入内容\"><div class=\"err-msg\"></div></div></div>"
 					}
 				]
 			},

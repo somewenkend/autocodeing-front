@@ -176,13 +176,21 @@ function insertComponent(top, left, bottom, right, data) {
 		if (((0 < (right - activePos.left) && (activePos.right - left) > 0)) || ((0 < (bottom - activePos.top) && (activePos.bottom - top) > 0))) { // 相交或相容
 			var insertIndexArr = handleInsert(top, left, bottom, right, $insertBox);
 			if (isJQObj) { // 是jquery对象，是在主编辑区内拖动
+				// 将移动前操作存储到前进后退动作栈中
+				saveMoveBeforeAction(data.closest("." + CONST_VARIABLE.AUTOCODING_EL), data);
 				finalInsert(data, $insertBox, insertIndexArr);
+				// 将移动后操作存储到前进后退动作栈中
+				saveMoveAfterAction($insertBox, data, insertIndexArr);
 			} else { // 不是jquery对象，是从组件库往主编辑区拖拽
 				new Drag(data, $insertBox, insertIndexArr);
 			}
 		} else { // 相离则直接插入激活组件最后
 			if (isJQObj) {
+				// 将移动前操作存储到前进后退动作栈中
+				saveMoveBeforeAction(data.closest("." + CONST_VARIABLE.AUTOCODING_EL), data);
 				finalInsert(data, $insertBox, []);
+				// 将移动后操作存储到前进后退动作栈中
+				saveMoveAfterAction($insertBox, data, []);
 			} else {
 				new Drag(data, $insertBox, []);
 			}
@@ -194,6 +202,30 @@ function insertComponent(top, left, bottom, right, data) {
 	}
 	// 插入完成后的动作
 	insertFinishedAction($activeComponent);
+}
+
+// 保存移动前动作
+function saveMoveBeforeAction($insertBox, $el) {
+	var insertIndexArr = [];
+	if ($el.next()[0]) { // 若有弟元素, 再次插入应插入到弟元素之前
+		insertIndexArr = [$el.next().index() - 1, 1];
+	}
+	actionStack.pushAction({
+		action: "move",
+		parentId: $insertBox.data("id"),
+		selfId: $el.data("id"),
+		insertIndexArr: insertIndexArr
+	});
+}
+
+// 保存移动后动作
+function saveMoveAfterAction($insertBox, $el, insertIndexArr) {
+	actionStack.pushAction({
+		action: "move",
+		parentId: $insertBox.data("id"),
+		selfId: $el.data("id"),
+		insertIndexArr: insertIndexArr
+	});
 }
 
 /**

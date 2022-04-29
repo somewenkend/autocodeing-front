@@ -18,6 +18,14 @@ function createCode(){
 		$(el).removeAttr("title");
 		// 移除drag-box
 		$(el).find(".drag-box").remove();
+		// 移除data-id
+		$(el).removeAttr("data-id");
+		// 移除data-size
+		$(el).removeAttr("data-size");
+		// 移除data-type
+		$(el).removeAttr("data-type");
+		// 移除data-changesize
+		$(el).removeAttr("data-changesize");
 		// 若是i-check，把input元素拎出来，同时移除中间渲染出来的代码
 		// if ($(el).hasClass("i-checks")) {
 		// 	var $input = $(el).find("input");

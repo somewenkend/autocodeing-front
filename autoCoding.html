@@ -113,7 +113,9 @@
 				<span>显示组件位置虚线：</span>
 				<input type="checkbox" id="control" checked="checked" />
 			</label>
-            <span class="f20 fb c111">AUTOCODING</span><br>
+            <b class="f20 c111">AUTOCODING</b>
+			<button type="button" class="ivu-btn ml10" onclick="goBack()"><i class="fa fa-chevron-left mr5"></i>后退</button>
+			<button type="button" class="ivu-btn ml10" onclick="goAhead()"><i class="fa fa-chevron-right mr5"></i>前进</button>
             <!-- 使用说明 -->
             <div class="use-des dilb">
             	<small onclick="toggleUpDown()" class="cc00 cp"><i class="fa fa-snowflake-o mr5"></i>使用说明</small>
@@ -155,7 +157,7 @@
                     </div>
                 </div>
                 <div class="col-lg-10 col-md-10" style="width: calc(83.33333333% - 20px);">
-                    <div id="mainArea">
+                    <div id="mainArea" data-id="mainArea">
                         
                     </div>
                 </div>
@@ -195,5 +197,6 @@
 		<script src="/js/codingMain.js"></script>
 		<script src="/js/formatHTML.js"></script>
 		<script src="/js/save.js"></script>
+		<script src="/js/aheadBack.js"></script>
     </body>
 </html>
