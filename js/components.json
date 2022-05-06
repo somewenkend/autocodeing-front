@@ -1,7 +1,7 @@
 [
 	{
 		"containerId": "Struct",
-		"name": "结构组件",
+		"name": "组件",
 		"components": [
 			{
 				"name": "顶部操作区域",
@@ -13,7 +13,7 @@
 						"canChangeSize": 1,
 						"componentIcon": "fa fa-search",
 						"componentName": "搜索区域",
-						"height": 170,
+						"height": 80,
 						"dragDirect": ["t", "b"],
 						"html": "<div class=\"btn-tool\"></div>"
 					},
@@ -51,7 +51,7 @@
 				]
 			},
 			{
-				"name": "高级搜索表单",
+				"name": "表单元素",
 				"icon": "fa fa-hand-o-right fa-fw",
 				"data": [
 					{
@@ -60,293 +60,89 @@
 						"canChangeSize": 1,
 						"componentIcon": "fa fa fa-file-text-o",
 						"componentName": "表单",
-						"height": 100,
+						"height": 150,
 						"dragDirect": ["t", "b"],
-						"html": "<form class=\"form-all serch-form\" id=\"searchForm\"></form>"
+						"html": "<form class=\"form-all serch-form row\" id=\"searchForm\"></form>"
 					},
 					{
 						"editSelector": "input",
-						"type": 1,
+						"type": 2,
 						"canChangeSize": 1,
 						"componentIcon": "fa fa fa-file-text-o",
 						"componentName": "文本input",
 						"height": "auto",
 						"dragDirect": ["t", "b"],
 						"html": "<div class=\"col-md-4 form-cont\"><div class=\"col-md-5 form-left\">姓名</div><div class=\"col-md-7\"><input name=\"billDate\" type=\"text\" class=\"ivu-input\" placeholder=\"请输入内容\"><div class=\"err-msg\"></div></div></div>"
-					}
-				]
-			},
-			{
-				"name": "栅格",
-				"icon": "fa fa-hand-o-right fa-fw",
-				"data": [
-					{
-						"isFrame": false,
-						"type": 1,
-						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-Row",
-						"componentName": "row",
-						"height": 100,
-						"dragDirect": ["t", "b"],
-						"html": "<div class=\"row\" tabindex=\"0\"></div>"
 					},
 					{
-						"isFrame": false,
-						"type": 1,
+						"editSelector": "input",
+						"type": 2,
 						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-Columns",
-						"componentName": "col-lg-2",
-						"height": 100,
-						"dragDirect": ["t", "b"],
-						"html": "<div class=\"col-lg-2\" tabindex=\"0\"></div>"
-					},
-					{
-						"isFrame": false,
-						"type": 1,
-						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-column-4",
-						"componentName": "col-lg-3",
-						"height": 100,
-						"dragDirect": ["t", "b"],
-						"html": "<div class=\"col-lg-3\" tabindex=\"0\"></div>"
-					},
-					{
-						"isFrame": false,
-						"type": 1,
-						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-3column",
-						"componentName": "col-lg-4",
-						"height": 100,
-						"dragDirect": ["t", "b"],
-						"html": "<div class=\"col-lg-4\" tabindex=\"0\"></div>"
-					},
-					{
-						"isFrame": false,
-						"type": 1,
-						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-column-horizontal",
-						"componentName": "col-lg-6",
-						"height": 100,
-						"dragDirect": ["t", "b"],
-						"html": "<div class=\"col-lg-6\" tabindex=\"0\"></div>"
-					},
-					{
-						"isFrame": false,
-						"type": 1,
-						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-Columns",
-						"componentName": "col-md-2",
-						"height": 100,
-						"dragDirect": ["t", "b"],
-						"html": "<div class=\"col-md-2\" tabindex=\"0\"></div>"
-					},
-					{
-						"isFrame": false,
-						"type": 1,
-						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-column-4",
-						"componentName": "col-md-3",
-						"height": 100,
-						"dragDirect": ["t", "b"],
-						"html": "<div class=\"col-md-3\" tabindex=\"0\"></div>"
-					},
-					{
-						"isFrame": false,
-						"type": 1,
-						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-3column",
-						"componentName": "col-md-4",
-						"height": 100,
-						"dragDirect": ["t", "b"],
-						"html": "<div class=\"col-md-4\" tabindex=\"0\"></div>"
-					},
-					{
-						"isFrame": false,
-						"type": 1,
-						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-column-horizontal",
-						"componentName": "col-md-6",
-						"height": 100,
-						"dragDirect": ["t", "b"],
-						"html": "<div class=\"col-md-6\" tabindex=\"0\"></div>"
-					},
-					{
-						"isFrame": false,
-						"type": 1,
-						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-Columns",
-						"componentName": "col-xs-2",
-						"height": 100,
-						"dragDirect": ["t", "b"],
-						"html": "<div class=\"col-xs-2\" tabindex=\"0\"></div>"
-					},
-					{
-						"isFrame": false,
-						"type": 1,
-						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-column-4",
-						"componentName": "col-xs-3",
-						"height": 100,
-						"dragDirect": ["t", "b"],
-						"html": "<div class=\"col-xs-3\" tabindex=\"0\"></div>"
-					},
-					{
-						"isFrame": false,
-						"type": 1,
-						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-3column",
-						"componentName": "col-xs-4",
-						"height": 100,
-						"dragDirect": ["t", "b"],
-						"html": "<div class=\"col-xs-4\" tabindex=\"0\"></div>"
-					},
-					{
-						"isFrame": false,
-						"type": 1,
-						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-column-horizontal",
-						"componentName": "col-xs-6",
-						"height": 100,
-						"dragDirect": ["t", "b"],
-						"html": "<div class=\"col-xs-6\" tabindex=\"0\"></div>"
-					}
-				]
-			},
-			{
-				"name": "其他",
-				"icon": "fa fa-hand-o-right fa-fw",
-				"data": [
-					{
-						"isFrame": false,
-						"type": 1,
-						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-square",
-						"componentName": "普通div",
-						"height": 100,
-						"dragDirect": ["t", "b"],
-						"html": "<div tabindex=\"0\"></div>"
-					},
-					{
-						"isFrame": false,
-						"type": 1,
-						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-SquareExclamation",
-						"componentName": "div.form-group",
-						"height": 100,
-						"dragDirect": ["t", "b"],
-						"html": "<div tabindex=\"0\" class=\"form-group\"></div>"
-					},
-					{
-						"isFrame": false,
-						"type": 1,
-						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-RemoveSquare",
-						"componentName": "div.form-horizon",
-						"height": 100,
-						"dragDirect": ["t", "b"],
-						"html": "<div tabindex=\"0\" class=\"form-group form-horizon\"></div>"
-					}
-				]
-			}
-		]
-	},
-	{
-		"containerId": "Ui",
-		"name": "UI组件",
-		"components": [
-			{
-				"name": "表单元素",
-				"icon": "fa fa-hand-o-right fa-fw",
-				"data": [
-					{
-						"isFrame": false,
-						"type": 0,
-						"canChangeSize": 0,
-						"componentIcon": "iconfont icon-radio",
-						"componentName": "radio(icheck)",
+						"componentIcon": "fa fa fa-file-text-o",
+						"componentName": "月份input",
 						"height": "auto",
-						"dragDirect": [],
-						"html": "<label class=\"i-checks mr20 cp\" tabindex=\"0\"><input type=\"radio\" value=\"1\" name=\"radioIcheck\" checked=\"checked\"/>单选icheck</label>"
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-md-4 form-cont\"><div class=\"col-md-5 form-left\">账单年月</div><div class=\"col-md-7\"><input name=\"billDate\" type=\"text\" class=\"ivu-input\" maxlength=\"7\" placeholder=\"YYYY-MM\"><div class=\"err-msg\"></div></div></div>"
 					},
 					{
-						"isFrame": false,
-						"type": 0,
-						"canChangeSize": 0,
-						"componentIcon": "iconfont icon-checkbox",
-						"componentName": "checkbox(icheck)",
+						"editSelector": "input",
+						"type": 2,
+						"canChangeSize": 1,
+						"componentIcon": "fa fa fa-file-text-o",
+						"componentName": "日期input",
 						"height": "auto",
-						"dragDirect": [],
-						"html": "<label class=\"i-checks mr20 cp\" tabindex=\"0\"><input type=\"checkbox\" value=\"1\" name=\"checkboxIcheck\" checked=\"checked\"/>多选icheck</label>"
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-md-4 form-cont\"><div class=\"col-md-5 form-left\">到账日期</div><div class=\"col-md-7\"><input name=\"billDate\" type=\"text\" class=\"ivu-input\" maxlength=\"10\" placeholder=\"YYYY-MM-DD\"><div class=\"err-msg\"></div></div></div>"
 					},
 					{
-						"isFrame": false,
-						"type": 0,
-						"canChangeSize": 0,
-						"componentIcon": "iconfont icon-radio1",
-						"componentName": "radio(原生)",
+						"editSelector": "select",
+						"type": 2,
+						"canChangeSize": 1,
+						"componentIcon": "fa fa fa-file-text-o",
+						"componentName": "select",
 						"height": "auto",
-						"dragDirect": [],
-						"html": "<div class=\"s-radio\" tabindex=\"0\"><input type=\"radio\" id=\"radio1\" name=\"radioNative\" value=\"1\" /><label for=\"radio1\"><b></b><span>原生单选</span></label></div>"
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-md-4 form-cont\"><div class=\"col-md-5 form-left\">业务类型</div><div class=\"col-md-7\"><select class=\"ivu-input\" name=\"type\"><option value=\"\">请选择</option></select><div class=\"err-msg\"></div></div></div>"
 					},
 					{
-						"isFrame": false,
-						"type": 0,
-						"canChangeSize": 0,
-						"componentIcon": "iconfont icon-baseline-check_box-px",
-						"componentName": "checkbox(原生)",
-						"height": "auto",
-						"dragDirect": [],
-						"html": "<div class=\"s-checkbox\" tabindex=\"0\"><input type=\"checkbox\" id=\"checkbox1\" name=\"checkboxNative\" value=\"1\" /><label for=\"checkbox1\"><b></b><span>原生多选</span></label></div>"
-					},
-					{
-						"isFrame": false,
-						"type": 0,
-						"canChangeSize": 0,
-						"componentIcon": "iconfont icon-input",
-						"componentName": "input",
-						"height": "auto",
-						"dragDirect": [],
-						"html": "<input type=\"text\" tabindex=\"0\" class=\"form-control\" name=\"testInput\" placeholder=\"请输入内容\" \/>"
-					},
-					{
-						"isFrame": false,
-						"type": 0,
-						"canChangeSize": 0,
-						"componentIcon": "iconfont icon-textarea",
+						"editSelector": "textarea",
+						"type": 2,
+						"canChangeSize": 1,
+						"componentIcon": "fa fa fa-file-text-o",
 						"componentName": "textarea",
 						"height": "auto",
-						"dragDirect": [],
-						"html": "<textarea id=\"editContent\" tabindex=\"0\" class=\"form-control\" name=\"testTextarea\" rows=\"5\" placeholder=\"请输入内容\"></textarea>"
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-md-4 form-cont\"><div class=\"col-md-5 form-left\">备注</div><div class=\"col-md-7\"><textarea class=\"ivu-input\" name=\"fileremark\" rows=\"3\" placeholder=\"请输入备注\"></textarea><div class=\"err-msg\"></div></div></div>"
 					},
 					{
-						"isFrame": false,
-						"type": 0,
-						"canChangeSize": 0,
-						"componentIcon": "iconfont icon-xialaliebiao",
-						"componentName": "select(单选)",
+						"editSelector": "radio",
+						"type": 2,
+						"canChangeSize": 1,
+						"componentIcon": "fa fa fa-file-text-o",
+						"componentName": "radio",
 						"height": "auto",
-						"dragDirect": [],
-						"html": "<select id=\"testSelect\" tabindex=\"0\" class=\"form-control\"><option value=\"1\">选项一</option><option value=\"2\">选项二</option><option value=\"3\">选项三</option></select>"
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-md-4 form-cont\"><div class=\"col-md-5 form-left\">是否发薪方</div><div class=\"col-md-7\"><label class=\"lay-radio\"><input name=\"autorenew\" type=\"radio\" value=\"1\" checked>是</label><input name=\"autorenew\" type=\"radio\" value=\"2\">否</label><div class=\"err-msg\"></div></div></div>"
 					},
 					{
-						"isFrame": false,
-						"type": 0,
-						"canChangeSize": 0,
-						"componentIcon": "iconfont icon-duoxuankuang",
-						"componentName": "select(多选)",
+						"editSelector": "checkbox",
+						"type": 2,
+						"canChangeSize": 1,
+						"componentIcon": "fa fa fa-file-text-o",
+						"componentName": "checkbox",
 						"height": "auto",
-						"dragDirect": [],
-						"html": "<select id=\"testSelect\" tabindex=\"0\" class=\"form-control\" multiple><option value=\"1\">选项一</option><option value=\"2\">选项二</option><option value=\"3\">选项三</option></select>"
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-md-4 form-cont\"><div class=\"col-md-5 form-left\">险种</div><div class=\"col-md-7\"><label class=\"lay-radio\"><input name=\"insurance\" type=\"checkbox\" value=\"1\" checked>失业险</label><input name=\"insurance\" type=\"checkbox\" value=\"2\">生育险</label><div class=\"err-msg\"></div></div></div>"
 					},
 					{
-						"isFrame": false,
-						"type": 0,
-						"canChangeSize": 0,
-						"componentIcon": "iconfont icon-anniu1",
-						"componentName": "button",
+						"editSelector": "searchReset",
+						"type": 2,
+						"canChangeSize": 1,
+						"componentIcon": "fa fa fa-file-text-o",
+						"componentName": "查询-重置",
 						"height": "auto",
-						"dragDirect": [],
-						"html": "<button type=\"button\" tabindex=\"0\" class=\"btn btn-success\">按钮</button>"
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-md-12 text-right\"><button type=\"button\" class=\"ivu-btn ivu-btn-primary\" id=\"_search\"><span>查询</span></button><button type=\"button\" class=\"ivu-btn ml10 btn_black\" id=\"_reset\"><span>重置</span></button></div>"
 					}
 				]
 			},
@@ -355,24 +151,14 @@
 				"icon": "fa fa-hand-o-right fa-fw",
 				"data": [
 					{
-						"isFrame": false,
-						"type": 0,
-						"canChangeSize": 0,
+						"type": 2,
+						"canChangeSize": 1,
 						"componentIcon": "iconfont icon-biaoge",
-						"componentName": "常规表格",
-						"height": "auto",
-						"dragDirect": [],
-						"html": "<div tabindex=\"0\" class=\"table-responsive\"><table class=\"table table-bordered table-hover table-striped mb0\"><thead><tr><th>列1</th> <th>列2</th> <th>列3</th></tr></thead><tbody><tr><td>td1-1</td> <td>td1-2</td> <td>td1-3</td></tr><tr><td>td2-1</td> <td>td2-2</td> <td>td2-3</td></tr></tbody></table></div>"
-					},
-					{
-						"isFrame": false,
-						"type": 0,
-						"canChangeSize": 0,
-						"componentIcon": "iconfont icon-biaoge2",
-						"componentName": "jqgrid用表格",
-						"height": "100",
-						"dragDirect": [],
-						"html": "<div tabindex=\"0\" class=\"table-box\"><table id=\"table1\"></table><div id=\"table1Pager\"></div></div>"
+						"componentName": "laytable",
+						"height": 50,
+						"minWidth": "100%",
+						"dragDirect": ["t", "b"],
+						"html": "<table id=\"dataTable\" lay-filter=\"tablefilter\"></table>"
 					}
 				]
 			},
@@ -388,7 +174,7 @@
 						"componentName": "label标签",
 						"height": "auto",
 						"dragDirect": [],
-						"html": "<label tabindex=\"0\">一个label标签</label>"
+						"html": "<label>一个label标签</label>"
 					},
 					{
 						"isFrame": false,
@@ -398,7 +184,7 @@
 						"componentName": "span标签",
 						"height": "auto",
 						"dragDirect": [],
-						"html": "<span tabindex=\"0\">一个span标签</span>"
+						"html": "<span>一个span标签</span>"
 					},
 					{
 						"isFrame": false,
@@ -408,7 +194,7 @@
 						"componentName": "p标签",
 						"height": "auto",
 						"dragDirect": [],
-						"html": "<p tabindex=\"0\">一个p标签</p>"
+						"html": "<p>一个p标签</p>"
 					},
 					{
 						"isFrame": false,
@@ -418,7 +204,7 @@
 						"componentName": "h1标签",
 						"height": "auto",
 						"dragDirect": [],
-						"html": "<h1 tabindex=\"0\">一个h1标签</h1>"
+						"html": "<h1>一个h1标签</h1>"
 					},
 					{
 						"isFrame": false,
@@ -428,7 +214,7 @@
 						"componentName": "b标签",
 						"height": "auto",
 						"dragDirect": [],
-						"html": "<b tabindex=\"0\">一个b标签</b>"
+						"html": "<b>一个b标签</b>"
 					},
 					{
 						"isFrame": false,
@@ -438,98 +224,155 @@
 						"componentName": "strong标签",
 						"height": "auto",
 						"dragDirect": [],
-						"html": "<strong tabindex=\"0\">一个strong标签</strong>"
+						"html": "<strong>一个strong标签</strong>"
 					}
 				]
 			},
 			{
-				"name": "图片元素",
+				"name": "栅格",
 				"icon": "fa fa-hand-o-right fa-fw",
 				"data": [
 					{
-						"isFrame": false,
-						"type": 0,
-						"canChangeSize": 0,
-						"componentIcon": "iconfont icon-tupian",
-						"componentName": "常规图片",
-						"height": "auto",
-						"dragDirect": [],
-						"html": "<span class=\"img-box normal-img dilb\" tabindex=\"0\"><img src=\"/img/car.jpg\" class=\"img-responsive w\" style=\"margin: 0;\"/></span>"
-					},
-					{
-						"isFrame": false,
-						"type": 0,
+						"type": 1,
 						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-touxiang",
-						"componentName": "头像",
-						"height": "auto",
-						"dragDirect": ["r"],
-						"html": "<span class=\"img-box head-img dilb\" tabindex=\"0\"><img src=\"/img/headImg.png\" class=\"img-circle\" style=\"margin: 0;\"/></span>"
+						"componentIcon": "iconfont icon-Row",
+						"componentName": "row",
+						"height": 100,
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"row\"></div>"
 					},
 					{
-						"isFrame": false,
-						"type": 0,
+						"type": 1,
 						"canChangeSize": 1,
-						"componentIcon": "iconfont icon-huizhang",
-						"componentName": "徽章",
-						"height": "auto",
-						"dragDirect": ["r"],
-						"html": "<span class=\"img-box badge-img dilb\" tabindex=\"0\"><img src=\"/img/badge.png\" class=\"img-circle\" style=\"margin: 0;\"/></span>"
+						"componentIcon": "iconfont icon-Columns",
+						"componentName": "col-lg-2",
+						"height": 100,
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-lg-2\"></div>"
+					},
+					{
+						"type": 1,
+						"canChangeSize": 1,
+						"componentIcon": "iconfont icon-column-4",
+						"componentName": "col-lg-3",
+						"height": 100,
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-lg-3\"></div>"
+					},
+					{
+						"type": 1,
+						"canChangeSize": 1,
+						"componentIcon": "iconfont icon-3column",
+						"componentName": "col-lg-4",
+						"height": 100,
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-lg-4\"></div>"
+					},
+					{
+						"type": 1,
+						"canChangeSize": 1,
+						"componentIcon": "iconfont icon-column-horizontal",
+						"componentName": "col-lg-6",
+						"height": 100,
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-lg-6\"></div>"
+					},
+					{
+						"type": 1,
+						"canChangeSize": 1,
+						"componentIcon": "iconfont icon-Columns",
+						"componentName": "col-md-2",
+						"height": 100,
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-md-2\"></div>"
+					},
+					{
+						"type": 1,
+						"canChangeSize": 1,
+						"componentIcon": "iconfont icon-column-4",
+						"componentName": "col-md-3",
+						"height": 100,
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-md-3\"></div>"
+					},
+					{
+						"type": 1,
+						"canChangeSize": 1,
+						"componentIcon": "iconfont icon-3column",
+						"componentName": "col-md-4",
+						"height": 100,
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-md-4\"></div>"
+					},
+					{
+						"type": 1,
+						"canChangeSize": 1,
+						"componentIcon": "iconfont icon-column-horizontal",
+						"componentName": "col-md-6",
+						"height": 100,
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-md-6\"></div>"
+					},
+					{
+						"type": 1,
+						"canChangeSize": 1,
+						"componentIcon": "iconfont icon-Columns",
+						"componentName": "col-xs-2",
+						"height": 100,
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-xs-2\"></div>"
+					},
+					{
+						"type": 1,
+						"canChangeSize": 1,
+						"componentIcon": "iconfont icon-column-4",
+						"componentName": "col-xs-3",
+						"height": 100,
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-xs-3\"></div>"
+					},
+					{
+						"type": 1,
+						"canChangeSize": 1,
+						"componentIcon": "iconfont icon-3column",
+						"componentName": "col-xs-4",
+						"height": 100,
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-xs-4\"></div>"
+					},
+					{
+						"type": 1,
+						"canChangeSize": 1,
+						"componentIcon": "iconfont icon-column-horizontal",
+						"componentName": "col-xs-6",
+						"height": 100,
+						"dragDirect": ["t", "b"],
+						"html": "<div class=\"col-xs-6\"></div>"
 					}
 				]
 			},
 			{
-				"name": "进度条",
+				"name": "其他",
 				"icon": "fa fa-hand-o-right fa-fw",
 				"data": [
 					{
-						"isFrame": false,
-						"type": 0,
-						"canChangeSize": 0,
-						"componentIcon": "iconfont icon-jindutiao",
-						"componentName": "单色进度条",
-						"height": "auto",
-						"dragDirect": [],
-						"html": "<div class=\"progress\" tabindex=\"0\"><div class=\"progress-bar progress-bar-warning\" role=\"progressbar\" style=\"width: 60%;\">60%</div></div>"
-					},
-					{
-						"isFrame": false,
-						"type": 0,
-						"canChangeSize": 0,
-						"componentIcon": "iconfont icon-jindutiao1",
-						"componentName": "条纹进度条",
-						"height": "auto",
-						"dragDirect": [],
-						"html": "<div class=\"progress\" tabindex=\"0\"><div class=\"progress-bar progress-bar-warning progress-bar-striped\" role=\"progressbar\" style=\"width: 50%;\">50%</div></div>"
-					}
-				]
-			},
-			{
-				"name": "时间选择框",
-				"icon": "fa fa-hand-o-right fa-fw",
-				"data": [
-					{
-						"isFrame": false,
-						"type": 0,
-						"canChangeSize": 0,
-						"componentIcon": "iconfont icon-date",
-						"componentName": "单个时间",
-						"height": "auto",
-						"dragDirect": [],
-						"html": "<div class=\"input-group\" tabindex=\"0\"><span class=\"input-group-addon\"><i class=\"fa fa-calendar-check-o fa-fw mr5\"></i>选择时间</span><input type=\"text\" class=\"form-control cp\" placeholder=\"请选择\" data-date-format=\"yyyy-mm-dd hh:ii:00\" readonly=\"readonly\" /></div>"
-					},
-					{
-						"isFrame": false,
-						"type": 0,
-						"canChangeSize": 0,
-						"componentIcon": "iconfont icon-date-range",
-						"componentName": "时间区间",
-						"height": "auto",
-						"dragDirect": [],
-						"html": "<div class=\"input-group\" tabindex=\"0\"><input type=\"text\" readonly=\"true\" class=\"form-control cp\" placeholder=\"选择开始时间\" data-date-format=\"yyyy-mm-dd\"><div class=\"input-group-addon\"> - </div><input type=\"text\" readonly=\"true\" class=\"form-control cp\" placeholder=\"选择结束时间\" data-date-format=\"yyyy-mm-dd\"></div>"
+						"type": 1,
+						"canChangeSize": 1,
+						"componentIcon": "iconfont icon-square",
+						"componentName": "普通div",
+						"height": 100,
+						"dragDirect": ["t", "b"],
+						"html": "<div></div>"
 					}
 				]
 			}
+		]
+	},
+	{
+		"containerId": "Ui",
+		"name": "自定义模板",
+		"components": [
+
 		]
 	}
 ]

@@ -393,6 +393,19 @@ function editComponent(componentName) {
         var src = $effectEl.attr("src");
         $("#extraAttr").find("[data-attr='src']").val(src);
         break;
+		case "laytable":
+			var filterHtml =
+				`
+				<div class="form-group">
+			        <label>组件lay-filter：</label>
+			        <input class="form-control" data-attr="lay-filter" placeholder="请输入组件lay-filter" />
+			    </div>
+	        `;
+			$("#extraAttr").append(filterHtml);
+
+			// 将组件当前的src属性值取出
+			var filter = $effectEl.attr("lay-filter");
+			$("#extraAttr").find("[data-attr='lay-filter']").val(filter);
 	};
 	// input或者textarea需要编辑placeholder属性
 	if (componentName == "input" || componentName == "textarea") {

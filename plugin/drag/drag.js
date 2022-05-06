@@ -93,7 +93,11 @@
 
 			$el = $(option.html);
 			$el.height(option.height);
-			$el.css("min-width", option.minWidth + "px");
+			if ( Object.prototype.toString.call(option.minWidth) == "[object String]") {
+				$el.css("min-width", option.minWidth);
+			} else {
+				$el.css("min-width", option.minWidth + "px");
+			}
 
 			var elId = guid();
 			$el.attr("data-id", elId); // 用来确定元素的唯一性

@@ -94,7 +94,7 @@
 			}
 			[v-clack]{display: none;}
 
-			.sidebar.cus-siderbar .tooltip-inner{min-width: inherit;}
+			.sidebar.cus-siderbar .tooltip-inner, .header.cus-header .tooltip-inner{min-width: inherit;}
 
 			.autocoding-el:not(button){background: #fff;}
         </style>
@@ -113,12 +113,15 @@
 				<span>显示组件位置虚线：</span>
 				<input type="checkbox" id="control" checked="checked" />
 			</label>
-            <b class="f20 c111">AUTOCODING</b>
-			<button type="button" class="ivu-btn ml10" onclick="goBack()"><i class="fa fa-chevron-left mr5"></i>后退</button>
-			<button type="button" class="ivu-btn ml10" onclick="goAhead()"><i class="fa fa-chevron-right mr5"></i>前进</button>
+            <b class="f20 c111" style="font-size: 20px;">AUTOCODING</b>
+			<blockquote style="display: inline; padding: 0px 8px; margin-left: 5px;"></blockquote>
+			<div style="display: inline; font-size: 20px;">
+				<a herf="javascript:;" onclick="goBack()" data-placement="bottom" data-toggle="tooltip" title="上一步"><i class="fa fa-chevron-circle-left"></i></a>
+				<a herf="javascript:;" class="ml10" onclick="goAhead()" data-placement="bottom" data-toggle="tooltip" title="下一步"><i class="fa fa-chevron-circle-left"></i></a>
+			</div>
             <!-- 使用说明 -->
             <div class="use-des dilb">
-            	<small onclick="toggleUpDown()" class="cc00 cp"><i class="fa fa-snowflake-o mr5"></i>使用说明</small>
+            	<small onclick="toggleUpDown()" class="cc00 cp" style="color: red; cursor: pointer;"><i class="fa fa-snowflake-o mr5"></i>使用说明</small>
             	<div id="description" class="none"></div>
             </div>
         </div>
@@ -184,8 +187,8 @@
 				        </div>
 	                </div>
 	                <div class="modal-footer">
-	                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-circle-o-notch fa-fw mr5"></i>取消</button>
-	                    <button type="button" class="btn btn-success" onclick="ensureAttr()"><i class="fa fa-check mr5"></i>确认</button>
+						<button type="button" class="ivu-btn ml10" data-dismiss="modal"><i class="fa fa-circle-o-notch fa-fw mr5"></i>取消</button>
+						<button type="button" class="ivu-btn ml10 ivu-btn-primary" onclick="ensureAttr()"><i class="fa fa-check mr5"></i>确认</button>
 	                </div>
 	            </div>
 	        </div>
@@ -194,8 +197,9 @@
 		<!-- <script type="text/javascript" src="/plugIn/toggle-master/js/bootstrap-toggle.js"></script> -->
 		<script src="/js/vue.min.js"></script>
         <script src="/plugin/drag/drag.js"></script>
+		<script src="/plugin/html-beauty/beautify-html.js"></script>
 		<script src="/js/codingMain.js"></script>
-		<script src="/js/formatHTML.js"></script>
+<!--		<script src="/js/formatHTML.js"></script>-->
 		<script src="/js/save.js"></script>
 		<script src="/js/aheadBack.js"></script>
     </body>
