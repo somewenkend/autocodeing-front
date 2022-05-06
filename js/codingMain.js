@@ -214,7 +214,8 @@ function saveMoveBeforeAction($insertBox, $el) {
 		action: "move",
 		parentId: $insertBox.data("id"),
 		selfId: $el.data("id"),
-		insertIndexArr: insertIndexArr
+		insertIndexArr: insertIndexArr,
+		type: "prev" // 标识走这一步前的状态
 	});
 }
 
@@ -224,7 +225,8 @@ function saveMoveAfterAction($insertBox, $el, insertIndexArr) {
 		action: "move",
 		parentId: $insertBox.data("id"),
 		selfId: $el.data("id"),
-		insertIndexArr: insertIndexArr
+		insertIndexArr: insertIndexArr,
+		type: "cur" // 标识走这一步前的状态
 	});
 }
 

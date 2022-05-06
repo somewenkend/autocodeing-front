@@ -44,6 +44,7 @@
 		operateAddObj.parentId = curEl.closest("." + CONST_VARIABLE.AUTOCODING_EL).data("id");
 		operateAddObj.self = curEl.clone();
 		operateAddObj.selfId = curEl.data("id");
+		operateAddObj.type = "prev"; // 标识走这一步前的状态
 		if (curEl.next()[0]) { // 若有弟元素, 再次插入应插入到弟元素之前
 			insertIndexArr = [curEl.next().index() - 1, 1];
 		}
@@ -53,7 +54,8 @@
 		// 移除元素操作
 		var operateRemoveObj = {
 			action: "remove",
-			selfId: curEl.data("id")
+			selfId: curEl.data("id"),
+			type: "cur" // 标识走完这一步的当前状态
 		};
 		actionStack.pushAction(operateRemoveObj);
 	}
@@ -103,7 +105,8 @@
 			// 移除元素操作
 			actionStack.pushAction({
 				action: "remove",
-				selfId: elId
+				selfId: elId,
+				type: "prev" // 标识走这一步前的状态
 			});
 			// 添加元素操作
 			actionStack.pushAction({
@@ -111,7 +114,8 @@
 				parentId: $box.data("id"),
 				self: $el.clone(),
 				selfId: elId,
-				insertIndexArr: insertIndexArr
+				insertIndexArr: insertIndexArr,
+				type: "cur" // 走完这一步的当前状态
 			});
 		}
 
