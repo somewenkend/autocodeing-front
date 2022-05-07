@@ -275,7 +275,7 @@
 					document.addEventListener('mouseup', end, false);
 				} else if (event.which == 3) { // 鼠标右键点击
 					if (self.option.editSelector != "") {
-						window.waitEdit = $(self.el).find(self.option.editEl);
+						window.waitEdit = $(self.el).find(self.option.editSelector);
 					} else {
 						window.waitEdit = self.el;
 					}

@@ -47,6 +47,28 @@
 						"minWidth": 100,
 						"dragDirect": ["t", "b"],
 						"html": "<div class=\"toolright\"></div>"
+					},
+					{
+						"editSelector": "",
+						"type": 2,
+						"canChangeSize": 1,
+						"componentIcon": "fa fa-plus-square",
+						"componentName": "实心按钮",
+						"height": 54,
+						"minWidth": 100,
+						"dragDirect": ["t", "b"],
+						"html": "<button type=\"button\" class=\"ivu-btn ivu-btn-primary\"><span>新增</span></button>"
+					},
+					{
+						"editSelector": "",
+						"type": 2,
+						"canChangeSize": 1,
+						"componentIcon": "fa fa-plus-square-o",
+						"componentName": "空心按钮",
+						"height": 54,
+						"minWidth": 100,
+						"dragDirect": ["t", "b"],
+						"html": "<button type=\"button\" class=\"ivu-btn\"><span>锁定</span></button>"
 					}
 				]
 			},
@@ -59,16 +81,16 @@
 						"type": 1,
 						"canChangeSize": 1,
 						"componentIcon": "fa fa fa-file-text-o",
-						"componentName": "表单",
+						"componentName": "搜索表单",
 						"height": 150,
 						"dragDirect": ["t", "b"],
-						"html": "<form class=\"form-all serch-form row\" id=\"searchForm\"></form>"
+						"html": "<form class=\"form-all serch-form row none\" id=\"searchForm\"></form>"
 					},
 					{
 						"editSelector": "input",
 						"type": 2,
 						"canChangeSize": 1,
-						"componentIcon": "fa fa fa-file-text-o",
+						"componentIcon": "iconfont icon-input1",
 						"componentName": "文本input",
 						"height": "auto",
 						"dragDirect": ["t", "b"],
@@ -78,7 +100,7 @@
 						"editSelector": "input",
 						"type": 2,
 						"canChangeSize": 1,
-						"componentIcon": "fa fa fa-file-text-o",
+						"componentIcon": "iconfont icon-input",
 						"componentName": "月份input",
 						"height": "auto",
 						"dragDirect": ["t", "b"],
@@ -88,7 +110,7 @@
 						"editSelector": "input",
 						"type": 2,
 						"canChangeSize": 1,
-						"componentIcon": "fa fa fa-file-text-o",
+						"componentIcon": "iconfont icon-input",
 						"componentName": "日期input",
 						"height": "auto",
 						"dragDirect": ["t", "b"],
@@ -98,7 +120,7 @@
 						"editSelector": "select",
 						"type": 2,
 						"canChangeSize": 1,
-						"componentIcon": "fa fa fa-file-text-o",
+						"componentIcon": "iconfont icon-xialaliebiao",
 						"componentName": "select",
 						"height": "auto",
 						"dragDirect": ["t", "b"],
@@ -108,37 +130,37 @@
 						"editSelector": "textarea",
 						"type": 2,
 						"canChangeSize": 1,
-						"componentIcon": "fa fa fa-file-text-o",
+						"componentIcon": "iconfont icon-textarea1",
 						"componentName": "textarea",
 						"height": "auto",
 						"dragDirect": ["t", "b"],
 						"html": "<div class=\"col-md-4 form-cont\"><div class=\"col-md-5 form-left\">备注</div><div class=\"col-md-7\"><textarea class=\"ivu-input\" name=\"fileremark\" rows=\"3\" placeholder=\"请输入备注\"></textarea><div class=\"err-msg\"></div></div></div>"
 					},
 					{
-						"editSelector": "radio",
+						"editSelector": "input",
 						"type": 2,
 						"canChangeSize": 1,
-						"componentIcon": "fa fa fa-file-text-o",
+						"componentIcon": "iconfont icon-radio",
 						"componentName": "radio",
 						"height": "auto",
 						"dragDirect": ["t", "b"],
 						"html": "<div class=\"col-md-4 form-cont\"><div class=\"col-md-5 form-left\">是否发薪方</div><div class=\"col-md-7\"><label class=\"lay-radio\"><input name=\"autorenew\" type=\"radio\" value=\"1\" checked>是</label><input name=\"autorenew\" type=\"radio\" value=\"2\">否</label><div class=\"err-msg\"></div></div></div>"
 					},
 					{
-						"editSelector": "checkbox",
+						"editSelector": "input",
 						"type": 2,
 						"canChangeSize": 1,
-						"componentIcon": "fa fa fa-file-text-o",
+						"componentIcon": "iconfont icon-checkbox",
 						"componentName": "checkbox",
 						"height": "auto",
 						"dragDirect": ["t", "b"],
 						"html": "<div class=\"col-md-4 form-cont\"><div class=\"col-md-5 form-left\">险种</div><div class=\"col-md-7\"><label class=\"lay-radio\"><input name=\"insurance\" type=\"checkbox\" value=\"1\" checked>失业险</label><input name=\"insurance\" type=\"checkbox\" value=\"2\">生育险</label><div class=\"err-msg\"></div></div></div>"
 					},
 					{
-						"editSelector": "searchReset",
+						"editSelector": "",
 						"type": 2,
 						"canChangeSize": 1,
-						"componentIcon": "fa fa fa-file-text-o",
+						"componentIcon": "iconfont icon-anniu1",
 						"componentName": "查询-重置",
 						"height": "auto",
 						"dragDirect": ["t", "b"],
@@ -147,7 +169,7 @@
 				]
 			},
 			{
-				"name": "表格",
+				"name": "其他",
 				"icon": "fa fa-hand-o-right fa-fw",
 				"data": [
 					{
@@ -159,6 +181,26 @@
 						"minWidth": "100%",
 						"dragDirect": ["t", "b"],
 						"html": "<table id=\"dataTable\" lay-filter=\"tablefilter\"></table>"
+					},
+					{
+						"type": 1,
+						"canChangeSize": 1,
+						"componentIcon": "iconfont icon-frame1",
+						"componentName": "弹框",
+						"height": 309,
+						"minWidth": 480,
+						"dragDirect": ["t", "b"],
+						"html": "<div id=\"dialog\" class=\"dialog none\"></div>"
+					},
+					{
+						"editSelector": "",
+						"type": 1,
+						"canChangeSize": 1,
+						"componentIcon": "iconfont icon-square1",
+						"componentName": "一般表单",
+						"height": 150,
+						"dragDirect": ["t", "b"],
+						"html": "<form class=\"form-all row\"></form>"
 					}
 				]
 			},
@@ -167,7 +209,6 @@
 				"icon": "fa fa-hand-o-right fa-fw",
 				"data": [
 					{
-						"isFrame": false,
 						"type": 0,
 						"canChangeSize": 0,
 						"componentIcon": "iconfont icon-label",
@@ -177,7 +218,6 @@
 						"html": "<label>一个label标签</label>"
 					},
 					{
-						"isFrame": false,
 						"type": 0,
 						"canChangeSize": 0,
 						"componentIcon": "iconfont icon-rectangle",
@@ -187,7 +227,6 @@
 						"html": "<span>一个span标签</span>"
 					},
 					{
-						"isFrame": false,
 						"type": 0,
 						"canChangeSize": 0,
 						"componentIcon": "iconfont icon-paragraph",
@@ -197,7 +236,6 @@
 						"html": "<p>一个p标签</p>"
 					},
 					{
-						"isFrame": false,
 						"type": 0,
 						"canChangeSize": 0,
 						"componentIcon": "iconfont icon-h",
@@ -207,7 +245,6 @@
 						"html": "<h1>一个h1标签</h1>"
 					},
 					{
-						"isFrame": false,
 						"type": 0,
 						"canChangeSize": 0,
 						"componentIcon": "iconfont icon-cuti",
@@ -217,7 +254,6 @@
 						"html": "<b>一个b标签</b>"
 					},
 					{
-						"isFrame": false,
 						"type": 0,
 						"canChangeSize": 0,
 						"componentIcon": "iconfont icon-S_round",

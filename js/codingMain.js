@@ -358,12 +358,13 @@ function editComponent(componentName) {
 	switch (componentName) {
 	// case "radio(icheck)":
 	// case "checkbox(icheck)":
-	case "radio(原生)":
-	case "checkbox(原生)":
-	case "input":
+	case "文本input":
+	case "月份input":
+	case "日期input":
+	case "select":
 	case "textarea":
-	case "select(单选)":
-	case "select(多选)":
+	case "radio":
+	case "checkbox":
 		var nameHtml = 
 			`
 				<div class="form-group">
@@ -377,38 +378,23 @@ function editComponent(componentName) {
         var name = $effectEl.attr("name");
         $("#extraAttr").find("[data-attr='name']").val(name);
 	    break;
-	case "常规图片":
-	case "头像":
-	case "徽章":
-		var srcHtml = 
+	case "laytable":
+		var filterHtml =
 			`
-				<div class="form-group">
-			        <label>图片src：</label>
-			        <input class="form-control" data-attr="src" placeholder="请输入图片src" />
-			    </div>
-	        `;
-        $("#extraAttr").append(srcHtml);
-        
-        // 将组件当前的src属性值取出
-        var src = $effectEl.attr("src");
-        $("#extraAttr").find("[data-attr='src']").val(src);
-        break;
-		case "laytable":
-			var filterHtml =
-				`
-				<div class="form-group">
-			        <label>组件lay-filter：</label>
-			        <input class="form-control" data-attr="lay-filter" placeholder="请输入组件lay-filter" />
-			    </div>
-	        `;
-			$("#extraAttr").append(filterHtml);
+			<div class="form-group">
+				<label>组件lay-filter：</label>
+				<input class="form-control" data-attr="lay-filter" placeholder="请输入组件lay-filter" />
+			</div>
+		`;
+		$("#extraAttr").append(filterHtml);
 
-			// 将组件当前的src属性值取出
-			var filter = $effectEl.attr("lay-filter");
-			$("#extraAttr").find("[data-attr='lay-filter']").val(filter);
+		// 将组件当前的src属性值取出
+		var filter = $effectEl.attr("lay-filter");
+		$("#extraAttr").find("[data-attr='lay-filter']").val(filter);
+		break;
 	};
 	// input或者textarea需要编辑placeholder属性
-	if (componentName == "input" || componentName == "textarea") {
+	if (componentName == "文本input" || componentName == "textarea") {
 		var placeholderHtml = 
 			`
 				<div class="form-group">

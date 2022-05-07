@@ -68,12 +68,17 @@
 				flex-flow: column;
 				justify-content: center;
 				align-items: center;
-				padding: 10px;
+				padding: 7px;
 				cursor: pointer;
 			}
 			.component-container .component-box .component span{overflow: hidden; display: -webkit-box; text-overflow: ellipsis; -webkit-box-orient: vertical; -webkit-line-clamp: 1;}
 			.component-container .component-box .component:hover{background-color: #f1f1f1;}
-			.component-container .component-box .component i{font-size: 24px; margin-bottom: 10px;}
+			.component-container .component-box .component i {
+				font-size: 18px;
+				margin-bottom: 10px;
+				height: 20px;
+				line-height: 20px;
+			}
 			.toggle{float: right; margin-right: 10px;}
 			
 			.component-list{overflow: auto; height: calc(100vh - 141px); overflow-x: hidden;}
@@ -97,12 +102,14 @@
 			.sidebar.cus-siderbar .tooltip-inner, .header.cus-header .tooltip-inner{min-width: inherit;}
 
 			.autocoding-el:not(button){background: #fff;}
+			.autocoding-el.none{display: block;}
+			.autocoding-el.dialog.none{display: inline-block; margin: 10px;}
         </style>
     </head>
     <!-- 主编辑区域 -->
     <body oncontextmenu="doNothing()">
 		<style id="dashed">
-			.autocoding-el{border: 1px dashed #ddd;}
+			.autocoding-el{border: 1px dashed #eee;}
 			.autocoding-el:not(button){border-radius: 5px; color: #111;}
 		</style>
         <div class="header cus-header">
@@ -117,7 +124,7 @@
 			<blockquote style="display: inline; padding: 0px 8px; margin-left: 5px;"></blockquote>
 			<div style="display: inline; font-size: 20px;">
 				<a herf="javascript:;" onclick="goBack()" data-placement="bottom" data-toggle="tooltip" title="上一步"><i class="fa fa-chevron-circle-left"></i></a>
-				<a herf="javascript:;" class="ml10" onclick="goAhead()" data-placement="bottom" data-toggle="tooltip" title="下一步"><i class="fa fa-chevron-circle-left"></i></a>
+				<a herf="javascript:;" class="ml10" onclick="goAhead()" data-placement="bottom" data-toggle="tooltip" title="下一步"><i class="fa fa-chevron-circle-right"></i></a>
 			</div>
             <!-- 使用说明 -->
             <div class="use-des dilb">
@@ -138,9 +145,9 @@
 						</div>
 						<div v-for="(item, index) in dataList" :key="index" :id="'component'+item.containerId" :class="{'component-container':true, 'active': index == 0}">
 							<ul class="component-list">
-								<li v-for="(itemC, indexC) in item.components" :key="indexC" :class="{'active': indexC == 0}">
+								<li v-for="(itemC, indexC) in item.components" :key="indexC" :class="{'active': true}">
 									<p class="component-title"><i :class="['mr5', itemC.icon]"></i>{{itemC.name}}</p>
-									<div :class="{'component-box':true, 'none':indexC != 0}">
+									<div :class="{'component-box':true}">
 										<div class="row">
 											<div v-for="(itemCC, indexCC) in itemC.data" :key="indexCC" class="col-lg-4 col-md-6">
 												<!-- data-index标识了此dom元素对应的组件数据 -->
