@@ -24,7 +24,7 @@ class aheadBack {
     go(type) {
         // 前进操作但已经是最后一步，则提示
         if (type == 0 && this.handleIndex == this.actionStack.length-1) {
-            alert("已是第一步！");
+            alert("已是最后一步！");
             return
         }
 

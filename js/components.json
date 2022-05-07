@@ -1,7 +1,7 @@
 [
 	{
 		"containerId": "Struct",
-		"name": "组件",
+		"name": "组件库",
 		"components": [
 			{
 				"name": "顶部操作区域",
@@ -406,9 +406,15 @@
 	},
 	{
 		"containerId": "Ui",
-		"name": "自定义模板",
+		"name": "DIY库",
 		"components": [
+			{
+				"name": "模板",
+				"icon": "fa fa-hand-o-right fa-fw",
+				"data": [
 
+				]
+			}
 		]
 	}
 ]
